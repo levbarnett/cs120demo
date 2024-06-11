@@ -31,7 +31,7 @@ h1,h2 {
 }
 
 #food-image {
-    background-image: url("file:///home/lev/Desktop/cs120/burger.jpg");
+    background-image: url("https://levbarnett.github.io/cs120demo/burger.jpg");
     width: 500px;
     height: 500px;
 }
