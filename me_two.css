@@ -1,0 +1,43 @@
+* {
+    font-family: sans-serif;
+    color: saddlebrown;
+}
+
+h1,h2 {
+    color: tan;
+    size: 8em;
+    margin-bottom: 30px;
+}
+
+.list {
+    margin: 0 auto;
+    border: 2px solid tan;
+}
+
+.list-title {
+    font-weight: bold;
+    text-align: center;
+}
+
+.fav-food {
+    display: inline-block;
+    text-align: left;
+}
+
+#food-image {
+    background-image: url("file:///home/lev/Desktop/cs120/burger.jpg");
+    width: 500px;
+    height: 500px;
+}
+
+tr:nth-of-type(2n) {
+    background-color: beige;
+}
+
+tr:nth-of-type(2n-1) {
+    background-color: tan;
+}
+
+label {
+    text-align: right;
+}
