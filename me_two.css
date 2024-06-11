@@ -3,6 +3,12 @@
     color: saddlebrown;
 }
 
+.icons {
+    position: fixed;
+    top: 100px;
+    right: 35px;
+}
+
 h1,h2 {
     color: tan;
     size: 8em;
