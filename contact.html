@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Project 1</title>
+</head>
+<body>
+    <div id="header">
+    <h1 id="logo">Boots & the Hooligans</h1>
+    <nav id="top-nav">
+        <ul>
+            <li><a href="home.html">About</a></li>
+            <li><a href="bios.html">Bios</a></li>
+            <li><a href="songs.html">Songs</a></li>
+            <li><a class="selflink" href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+    </div>
+    <div id="side-nav">
+        <ul>
+            <li><a href="#">Form</a></li>
+            <li><a href="#submit-button">Submit</a></li>
+        </ul>
+    </div>
+    <div id="main">
+        <h1>Contact Us! We love hearing from people.</h1>
+        <div>
+            <form>
+                <label>Name:</label>
+                <input type="text" required><br>
+                <label>Email:</label>
+                <input type="email" required><br>
+                <label>Phone Number:</label>
+                <input type="tel" required><br>
+                <label>Event Type:</label>
+                <select required>
+                    <option value="">Select</option>
+                    <option value="Wedding">Wedding</option>     
+                    <option value="CoA">Coming of Age Celebration</option>
+                    <option value="other">Other (specify in your note)</option>
+                </select><br>
+                <label>Leave us a note!</label>
+                <input type="text"><br>
+                <input id="submit-button" style="width:20%;margin-left: 40%" type="submit" value="Send">
+            </form>
+        </div>
+    </div> 
+</body>
+</html>
