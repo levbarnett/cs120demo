@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+</head>
+<body>
+    <script>
+        function count(array, value) {
+            let lessThanCount = 0;
+            for (let i = 0; i < array.length; i++) {
+                if (array[i] < value) {
+                    lessThanCount++;
+                }
+            }
+            return lessThanCount;
+        }
+    </script>
+    <div id="result"></div>
+    <script>
+        function testCount() {
+            let array = [2,34,5,22,12,15,3,5,46,57];
+            let value = 13;
+            return count(array, value);
+        }
+        document.getElementById("result").innerHTML = testCount();
+    </script>
+</body>
+</html>
