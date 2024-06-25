@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <script>
+        function speak(prefix) {
+            alert(prefix + " " + document.querySelector("input[type=text]").value)
+        }
+    </script>
+    <form>
+        <label>Name: </label>
+        <input type="text"><br>
+        <input type="button" value="Hello" onclick="speak('Hello')">
+        <input type="button" value="Good Bye" onclick="speak('Good Bye')">
+        <input type="button" value="Greetings" onclick="speak('Greetings')">
+    </form>
+</body>
+</html>

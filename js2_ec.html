@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <script>
+        const statesArray = [
+                "Alabama", "Alaska", "Oregon", "Massachusetts", "New York", 
+                "New Jersey", "New Mexico", "Illinois", "Arizona", "Missouri"];
+        window.onload = function() {
+            statesArray.forEach(state => {
+                document.getElementById("states").innerHTML += `<option>${state}</option>`;
+            })
+            document.getElementById("states")[0].selected = "true";
+            document.getElementById("add").onclick = add;
+            document.getElementById("clear").onclick = clear;
+        }
+        
+        function add() {
+            const index = document.getElementById("states").selectedIndex;
+            const text = document.getElementById("states")[index].text;
+            document.getElementById("states")[index].remove();
+            document.getElementById("states")[0].selected = "true";
+            document.getElementById("display").innerHTML += `${text}<br>`;
+        }
+
+        function clear() {
+            document.getElementById("display").innerHTML = "";
+            document.getElementById("states").innerHTML = "";
+            statesArray.forEach(state => {
+                document.getElementById("states").innerHTML += `<option>${state}</option>`;
+            })
+            document.getElementById("states")[0].selected = "true";
+        }
+    </script>
+    <select id="states" size="5">
+    </select>
+    <button id="add">Add State</button>
+    <div id="display" style="min-height:20vh;border:2px solid black">
+        
+    </div>
+    <button id="clear">Clear States</button>
+</body>
+</html>
