@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        #display {
+            border: 2px solid black;
+            border-radius: 2%;
+            box-sizing: border-box;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 3%;
+            padding: 2%;
+            height: 50vh;
+            overflow: scroll;
+        }
+        .song {
+            border: 2px solid black;
+            box-sizing: border-box;
+            border-radius: 5%;
+            text-align: center;
+            align-content: center;
+        }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</head>
+<body>
+    <script>
+        let genreList = [];
+        $.get("https://levbarnett.github.io/cs120demo/songs.json", 
+            function(data) {
+                data['songs'].forEach(song => {
+                    const genres = song['genre'];
+                    genres.forEach(genre => {
+                        if (!genreList.includes(genre)) {
+                            genreList.push(genre);
+                            genreList[genre] = [
+                                `<div class="song"><strong>${song['name']}</strong></div>`];
+                        } else {
+                            genreList[genre].push(
+                                `<div class="song"><strong>${song['name']}</strong></div>`);
+                        }
+                    })
+                })
+
+                genreList.forEach(genre => {
+                    $('#genreSelector').append(
+                        `<option id="${genre}">${genre}</option>`
+                    )
+                })
+            }
+        )
+
+        $(document).ready(() => {
+            $('input[value=Filter]').bind("click", () => {
+                const selected = $('#genreSelector option:selected').text();
+                $('#display').html(genreList[selected].join(""));
+            })
+        })
+    </script>
+    <select id="genreSelector"></select>
+    <input type="button" value="Filter">
+    <div id="display"></div>
+</body>
+</html>
