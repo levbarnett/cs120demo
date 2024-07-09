@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="wordle.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="wordle.js"></script>
+    <title>Wordle</title>
+</head>
+<body>
+    <div id="header">
+        Wordle
+    </div>
+    <div id="main-content">
+        <div id="display">
+            <div class="word 0">
+                <div class="letter 0"></div>
+                <div class="letter 1"></div>
+                <div class="letter 2"></div>
+                <div class="letter 3"></div>
+                <div class="letter 4"></div>
+            </div>
+            <div class="word 1">
+                <div class="letter 0"></div>
+                <div class="letter 1"></div>
+                <div class="letter 2"></div>
+                <div class="letter 3"></div>
+                <div class="letter 4"></div>
+            </div>
+            <div class="word 2">
+                <div class="letter 0"></div>
+                <div class="letter 1"></div>
+                <div class="letter 2"></div>
+                <div class="letter 3"></div>
+                <div class="letter 4"></div>
+            </div>
+            <div class="word 3">
+                <div class="letter 0"></div>
+                <div class="letter 1"></div>
+                <div class="letter 2"></div>
+                <div class="letter 3"></div>
+                <div class="letter 4"></div>
+            </div>
+            <div class="word 4">
+                <div class="letter 0"></div>
+                <div class="letter 1"></div>
+                <div class="letter 2"></div>
+                <div class="letter 3"></div>
+                <div class="letter 4"></div>
+            </div>
+            <div class="word 5">
+                <div class="letter 0"></div>
+                <div class="letter 1"></div>
+                <div class="letter 2"></div>
+                <div class="letter 3"></div>
+                <div class="letter 4"></div>
+            </div>
+        </div>
+        <div id="input">
+            <form>
+                <label>Type a 5 letter word:</label><br>
+                <input id="guess" type="text" required>
+                <input style="margin-bottom:10px;margin-top:10px" id="guessBtn" type="button" value="Guess"><br>
+                <input id="reset" class="hidden" type="button" value="Try Again">
+            </form>
+        </div>
+    </div>
+</body>
+</html>
