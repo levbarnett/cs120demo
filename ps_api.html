@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(() => {
+            $('#get').click(() => {
+                let artist = $('#artist').val();
+                let title = $('#title').val();
+                console.log(`https://api.lyrics.ovh/v1/${artist}/${title}`);
+                promise = fetch(`https://api.lyrics.ovh/v1/${artist}/${title}`)
+                    .then(promise => promise.text())
+                    .then(data => {
+                        let lyrics= JSON.parse(data)['lyrics'];
+                        lyrics = lyrics.split('\n');
+                        lyrics = lyrics.join('<br>')
+                        console.log(lyrics)
+                        $('#main-content').html(lyrics);
+                    })
+                    .catch($('#main-content').html("Sorry, no lyrics found"))
+            })
+        })
+    </script>
+    <title>API</title>
+</head>
+<body>
+    <form>
+        <label>Artist</label>
+        <input id="artist" type="text">
+        <label>Title</label>
+        <input id="title" type="text">
+        <input id="get" type="button" value="Get Lyrics">
+    </form>
+    <div style="height:20px"></div>
+    <div id="main-content"></div>
+</body>
+</html>
